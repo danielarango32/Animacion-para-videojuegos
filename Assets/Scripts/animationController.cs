@@ -11,7 +11,11 @@ public class animationController : MonoBehaviour
     private Vector2 nextInput;
     private Vector2 inputVelocity;
     private Motionstates motionstates = Motionstates.NotInCombat;
-    private Vector3 proyectedVector;
+    private Vector3 projectedVector;
+    private Quaternion desiredRotation;
+    private Quaternion currentRotation;
+    private float rotationSpeed;
+    private bool moving;
 
     int MotionXId, MotionYId;
 
@@ -28,9 +32,18 @@ public class animationController : MonoBehaviour
     }
     public void Move(CallbackContext context)
     {
+        if (context.canceled)
+        {
+            moving = false;
+        }
+        else
+        {
+            moving = true;
+        }
         Vector2 motionvalue = context.ReadValue<Vector2>();
         Debug.Log(motionvalue);
         nextInput = motionvalue;
+        
     }
 
     public void Update()
@@ -40,13 +53,27 @@ public class animationController : MonoBehaviour
         if (motionstates == Motionstates.NotInCombat)
         {
             //Calcular direccin de movimientos
-            Transform cameraTransform =Camera.main.transform;
-            Vector3 cameraFoward = Vector3.Lerp(cameraTransform.forward, cameraTransform. up, Mathf.Abs(Vector3.Dot(cameraTransform.forward, transform.up)));
-            proyectedVector = Vector3.ProjectOnPlane(cameraFoward, transform.up);
+            Transform cameraTransform = Camera.main.transform;
+            Vector3 cameraFoward = Vector3.Lerp(cameraTransform.forward, cameraTransform.up,
+                Mathf.Abs(Vector3.Dot(cameraTransform.forward, transform.up)));
 
-            //Rotar la direccion de movimiento
+            Vector3 cameraRight = cameraTransform.right;
+            projectedVector = Vector3.ProjectOnPlane(cameraFoward, transform.up).normalized * currentInput.y + cameraRight * currentInput.x;
+            projectedVector = projectedVector.normalized;   
+
+
+            currentRotation = Quaternion.LookRotation(projectedVector, transform.up);
+            transform.rotation = currentRotation;
+
             //Setear la animación
-            animator.SetFloat(MotionYId, currentInput.y);
+            animator.SetFloat(MotionYId, projectedVector.magnitude);
+        }
+
+        
+        if (!moving)
+        {
+            nextInput = Vector2.zero;
+            nextInput.Set(Mathf.Clamp(nextInput.x, -0.1f, 0.1f), Mathf.Clamp(nextInput.y, -0.1f, 0.1f));
         }
     
         
@@ -54,7 +81,7 @@ public class animationController : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + proyectedVector);
+        Gizmos.DrawLine(transform.position, transform.position + projectedVector);
     }
 #endif
 }
