@@ -1581,7 +1581,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraRotationTarget: {fileID: 640753831}
   lookSpeed: 30
-  aimingCamera: {fileID: 0}
+  aimingCamera: {fileID: 818783931}
+  aimTarget: {fileID: 988511183}
 --- !u!1 &1730323243
 GameObject:
   m_ObjectHideFlags: 0
