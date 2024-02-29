@@ -13,6 +13,10 @@ public class AimController : ThirdPersonShooterPlayerScript
     [SerializeField] private float lookSpeed = 30;
     [SerializeField] CinemachineVirtualCamera aimingCamera;
     [SerializeField] private Transform aimTarget;
+    [SerializeField] private Camera camera;
+    [SerializeField] private Vector2 verticalThreshold; //Normalizar
+    [SerializeField] private Vector2 horizontalThreshold;
+    [SerializeField] private Transform aimCameraRig;
 
     Animator animator;
 
@@ -22,7 +26,23 @@ public class AimController : ThirdPersonShooterPlayerScript
         if (cameraRotationTarget == null)
             return;
         cameraRotationTarget.RotateAround(transform.position, transform.up, inputValue.x * Time.deltaTime * 1.3f);
-        aimTarget.position = Vector3.ProjectOnPlane(aimTarget.position + aimingCamera.transform.right * inputValue.x + aimingCamera.transform.right * inputValue.y, aimingCamera.transform.forward * 10);
+        
+
+    }
+
+    public void Aiming(InputAction.CallbackContext context)
+    {
+        Vector2 inputValue = context.ReadValue<Vector2>();
+        Vector3 projectedPoint = camera.ScreenToWorldPoint(new Vector3(inputValue.x, inputValue.y, 10));
+        Debug.DrawLine(camera.transform.position, projectedPoint, Color.cyan, 0.3f);
+        aimTarget.position = projectedPoint;
+        Vector2 normalizedPointerPosition = inputValue / new Vector2(camera.pixelWidth, camera.pixelHeight);
+        bool shouldRotateHorizontal = normalizedPointerPosition.x < horizontalThreshold.x ||
+                                      normalizedPointerPosition.x > horizontalThreshold.y;
+        bool shouldRotateVertical = normalizedPointerPosition.y < verticalThreshold.x ||
+                                      normalizedPointerPosition.y > verticalThreshold.y;
+        Vector2 direcctionalPointerPosition = normalizedPointerPosition * Vector2.one - Vector2.one;
+        aimCameraRig.RotateAround(transform.position, transform.up, direcctionalPointerPosition.x * 1.3f);
 
     }
     public void ToogleAim(InputAction.CallbackContext context)
@@ -33,6 +53,7 @@ public class AimController : ThirdPersonShooterPlayerScript
         //playerData.State = inputValue > 0 
         //    ? ThirdPersonShooterPlayerData.PlayerState.AimingMode 
         //    : ThirdPersonShooterPlayerData.PlayerState.NormalMode;
+        
     }
 
     //protected override void OnStateChanged(ThirdPersonShooterPlayerData.PlayerState state)
