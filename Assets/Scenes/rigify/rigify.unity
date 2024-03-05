@@ -826,6 +826,7 @@ MonoBehaviour:
   detectionReference: {fileID: 1910236513}
   foot: {fileID: 1570215894}
   detectionRange: 0
+  maxDetectionDistance: 0
 --- !u!4 &518851496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6515712193588681746, guid: ef006c8e9afa9964baaf99d98f7f9c29,
