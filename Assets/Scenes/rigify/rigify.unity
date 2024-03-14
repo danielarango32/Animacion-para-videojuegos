@@ -467,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 228042928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.369, y: -0.31, z: 0.47}
+  m_LocalPosition: {x: 1.369, y: -0.31, z: -0.715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -818,6 +818,14 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ef006c8e9afa9964baaf99d98f7f9c29,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 499381644}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ef006c8e9afa9964baaf99d98f7f9c29,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499381645}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ef006c8e9afa9964baaf99d98f7f9c29,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 499381639}
   m_SourcePrefab: {fileID: 100100000, guid: ef006c8e9afa9964baaf99d98f7f9c29, type: 3}
 --- !u!1 &499381638 stripped
@@ -929,13 +937,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionReference: {fileID: 1910236513}
+  foot: {fileID: 73466527}
+  detectionRange: 0.49
+  maxDetectionDistance: 0.7
+  ikGoal: 0
+  snapOffsets: {x: 0.05, y: 0.2}
+  snapOffsetParameter: LeftFootIk
+  snapSpeed: 5
+  snapRotationOffset: {x: 100, y: 0, z: 0}
+  root: {fileID: 499381641}
+  onIkSolved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 499381645}
+        m_TargetAssemblyTypeName: FottIkRootSolver, Assembly-CSharp
+        m_MethodName: UpdateTargetOffset
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &499381644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499381638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdfce5129e311b41b8544e767773ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionReference: {fileID: 1910236513}
   foot: {fileID: 1570215894}
   detectionRange: 0.49
-  maxDetectionDistance: 0.74
+  maxDetectionDistance: 0.7
   ikGoal: 1
-  snapOffsets: {x: 0.1, y: 0.1}
+  snapOffsets: {x: 0.05, y: 0.2}
   snapOffsetParameter: RightFootIk
-  snapSpeed: 15
+  snapSpeed: 5
+  snapRotationOffset: {x: 100, y: 0, z: 0}
+  root: {fileID: 499381641}
+  onIkSolved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 499381645}
+        m_TargetAssemblyTypeName: FottIkRootSolver, Assembly-CSharp
+        m_MethodName: UpdateTargetOffset
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &499381645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499381638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6910bc5b3fdbfcd498ed4323f6e747ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterRoot: {fileID: 499381641}
+  readjustmentThreshold: 0
 --- !u!4 &518851496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6515712193588681746, guid: ef006c8e9afa9964baaf99d98f7f9c29,

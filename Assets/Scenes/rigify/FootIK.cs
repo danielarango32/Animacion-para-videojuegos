@@ -1,7 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
+
+[Serializable]
+
+public class FloatEvent : UnityEvent<float>
+{
+
+}
 
 [RequireComponent(typeof(Animator))]  
 public class FootIK : MonoBehaviour
@@ -14,7 +23,10 @@ public class FootIK : MonoBehaviour
     [SerializeField] private Vector2 snapOffsets;
     [SerializeField] private string snapOffsetParameter;
     [SerializeField] private float snapSpeed = 15;
+    [SerializeField] private Vector3 snapRotationOffset;
+    [SerializeField] private Transform root;
 
+    public FloatEvent onIkSolved;
     Animator animator;
 
     private bool hasTarget;
@@ -22,6 +34,8 @@ public class FootIK : MonoBehaviour
     private Vector3 currentIkPosition;
     // Start is called before the first frame update
 
+
+    
     public Vector3 GetDetectionStartPosition()
     {
         Vector3 referenceSpacePosition = detectionReference.InverseTransformPoint(foot.position);
@@ -46,6 +60,14 @@ public class FootIK : MonoBehaviour
         float snapInterpolator = animator.GetFloat(snapOffsetParameter);
         float solvedSnapOffset = Mathf.Lerp(snapOffsets.x, snapOffsets.y, snapInterpolator);    
         animator.SetIKPosition(ikGoal, currentIkPosition + detectionReference.up * snapOffsets.y);
+
+        animator.SetIKRotationWeight(ikGoal, snapInterpolator);
+        Quaternion rot = Quaternion.LookRotation(ikTarget.normal) * Quaternion.Euler(snapRotationOffset);
+        animator.SetIKRotation(ikGoal, rot);
+
+        Vector3 characterSpaceFoot = root.InverseTransformPoint(foot.position);
+
+        onIkSolved?.Invoke(characterSpaceFoot.y);
     }
 
     public Transform DetectionReference => detectionReference;
