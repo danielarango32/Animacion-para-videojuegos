@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,21 +8,38 @@ public class FottIkRootSolver : MonoBehaviour
 {
     [SerializeField] private Transform characterRoot;
     [SerializeField] private float readjustmentThreshold;
-
+    [SerializeField] private float readAdjustmentSpeed = 15.0f;
+    [SerializeField] private Rigidbody rigidbody;
     private List<float> heightOffsets = new List<float>();
 
     private Vector3 rootTarget;
+    private Vector3 currentRootPosition;
     private void OnAnimatorMove()
     {
-        float minimumOffset = heightOffsets.Min();
-        if (minimumOffset > readjustmentThreshold)
+        if (heightOffsets.Count >= 2)
         {
-            rootTarget = characterRoot.position + characterRoot.up * minimumOffset;
+            float minimumOffset = MathF.Min(heightOffsets[0], heightOffsets[1]);
+            if (minimumOffset > readjustmentThreshold)
+            {
+                rootTarget = characterRoot.TransformPoint(new Vector3(0, minimumOffset, 0));
+                rigidbody.isKinematic = true;
+            }
+            else
+            {
+                rigidbody.isKinematic = false;
+                rootTarget = characterRoot.position;
+            }
         }
         else
         {
+            rigidbody.isKinematic = false;
             rootTarget = characterRoot.position;
         }
+        
+
+        currentRootPosition = Vector3.Lerp(currentRootPosition, rootTarget, Time.deltaTime * readAdjustmentSpeed);
+        characterRoot.position=currentRootPosition;
+        heightOffsets.Clear();
     }
 
     public void UpdateTargetOffset(float heightValue)

@@ -65,7 +65,7 @@ public class FootIK : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(ikTarget.normal) * Quaternion.Euler(snapRotationOffset);
         animator.SetIKRotation(ikGoal, rot);
 
-        Vector3 characterSpaceFoot = root.InverseTransformPoint(foot.position);
+        Vector3 characterSpaceFoot = root.InverseTransformPoint(ikTarget.point);
 
         onIkSolved?.Invoke(characterSpaceFoot.y);
     }
