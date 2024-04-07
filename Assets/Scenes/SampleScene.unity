@@ -204,6 +204,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fd26fce3-5df1-4879-bf8f-b2f92644d85a
     m_ActionName: Main/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 55f39c83-609b-4e6e-b42a-4ab94d24ee7b
+    m_ActionName: Main/Aim[/Mouse/delta,/Pen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 25e4eda2-6689-4d01-8b19-d06f89387aa7
+    m_ActionName: Main/ToggleAim[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b854773a-9b71-4f6b-b581-02304273c8d1
+    m_ActionName: Main/Aiming[/Mouse/position,/Pen/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Main
@@ -1085,7 +1097,7 @@ AimConstraint:
   serializedVersion: 2
   m_Weight: 1
   m_RotationAtRest: {x: -8.885646, y: 0, z: -0}
-  m_RotationOffset: {x: -37.103382, y: -45.000004, z: 0}
+  m_RotationOffset: {x: -37.10337, y: -45, z: 0}
   m_AimVector: {x: -1, y: 1, z: 1}
   m_UpVector: {x: 0, y: 1, z: 0}
   m_WorldUpVector: {x: 0, y: 1, z: 0}
@@ -1866,6 +1878,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fd26fce3-5df1-4879-bf8f-b2f92644d85a
     m_ActionName: Main/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 55f39c83-609b-4e6e-b42a-4ab94d24ee7b
+    m_ActionName: Main/Aim[/Mouse/delta,/Pen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 25e4eda2-6689-4d01-8b19-d06f89387aa7
+    m_ActionName: Main/ToggleAim[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b854773a-9b71-4f6b-b581-02304273c8d1
+    m_ActionName: Main/Aiming[/Mouse/position,/Pen/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Main
@@ -2127,7 +2151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116320516}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0033090098, y: 1.3442412e-10, z: -4.4481319e-13, w: 0.9999945}
+  m_LocalRotation: {x: 0.0033090096, y: -1.3442412e-10, z: 4.4481316e-13, w: 0.9999945}
   m_LocalPosition: {x: -2.76, y: 1.5899999, z: -5.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
