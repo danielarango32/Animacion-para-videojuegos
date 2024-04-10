@@ -36,10 +36,10 @@ public class AimController : ThirdPersonShooterPlayerScript
                                       normalizedPointerPosition.x > horizontalThreshold.y;
         bool shouldRotateVertical = normalizedPointerPosition.y < verticalThreshold.x ||
                                     normalizedPointerPosition.y > verticalThreshold.y;
-        Vector2 direcctionalPointerPosition = normalizedPointerPosition * Vector2.one - Vector2.one;
+        Vector2 direcctionalPointerPosition = normalizedPointerPosition * Vector2.one*2 - Vector2.one;
         if (shouldRotateHorizontal)
         {
-            aimCameraRig.RotateAround(transform.position, transform.up, direcctionalPointerPosition.x * lookSpeed * Time.deltaTime * 1.3f);
+            aimCameraRig.RotateAround(transform.position, transform.up, direcctionalPointerPosition.x * lookSpeed *  1.3f);
         }
         Vector3 projectedPoint = camera.ScreenToWorldPoint(new Vector3(inputValue.x, inputValue.y, 10));
         Debug.DrawLine(camera.transform.position, projectedPoint, Color.cyan, 0.3f);
