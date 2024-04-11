@@ -1,4 +1,11 @@
 # Animacion-para-videojuegos
+## Entrega 3 Controlador de personaje
+
+
+
+https://github.com/danielarango32/Animacion-para-videojuegos/assets/71040945/edf89ba5-020e-4981-9372-f1e87d1c131f
+
+
 
 ## Entrega 2 IK's Interactivo
 
