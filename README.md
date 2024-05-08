@@ -18,6 +18,7 @@ https://github.com/danielarango32/Animacion-para-videojuegos/assets/71040945/7f2
 
 
 
+## Entrega 1 
 Video de animacion un Unity
  https://youtu.be/IwamICR9rU0
 
