@@ -1,0 +1,54 @@
+{
+    "name": "AttackMoveSet",
+    "maps": [
+        {
+            "name": "Combat",
+            "id": "1ef8a0cd-e507-4f65-b1e0-333fcd042a28",
+            "actions": [
+                {
+                    "name": "LightAttack",
+                    "type": "Value",
+                    "id": "4cf5db2e-311b-48e4-be0c-aaa8af3dd27f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HeavyAttack",
+                    "type": "Value",
+                    "id": "b624b40a-6cce-4e31-962f-540364256d27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5d3ee0df-ce72-4990-b421-48828a71f7ed",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "422ebc1c-737d-4ce6-b55f-61a47625e406",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
