@@ -4,40 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
-
-namespace Session3
-{
     public class AnimationController : MonoBehaviour
     {
-        enum MotionState
-        {
-            NotInCombat,
-            InCombat
-        }
-        
         private Animator animator;
         private Vector2 currentInput;
         private Vector2 nextInput;
         private Vector2 inputVelocity;
-        private MotionState motionState = MotionState.NotInCombat;
-
-        private int motionXId, motionYId;
-
+        private Motionstates motionstates = Motionstates.NotInCombat;
         private Vector3 projectedVector;
         private Quaternion desiredRotation;
         private Quaternion currentRotation;
         private float rotationSpeed;
-
         private bool moving;
-        
-        
+
+        int MotionXId, MotionYId;
+
+        enum Motionstates
+        {
+            NotInCombat,
+            InCombat
+        }
         private void Awake()
         {
             animator = GetComponent<Animator>();
-            motionXId = Animator.StringToHash("MotionX");
-            motionYId = Animator.StringToHash("MotionY");
+            MotionXId = Animator.StringToHash("MotionX");
+            MotionYId = Animator.StringToHash("MotionY");
         }
-
         public void Move(CallbackContext context)
         {
             if (context.canceled)
@@ -48,40 +40,43 @@ namespace Session3
             {
                 moving = true;
             }
-            Vector2 motionValue = context.ReadValue<Vector2>();
-            Debug.Log(motionValue);
-            nextInput = motionValue;
+            Vector2 motionvalue = context.ReadValue<Vector2>();
+            Debug.Log(motionvalue);
+            nextInput = motionvalue;
+
         }
 
-        private void Update()
+        public void Update()
         {
-            currentInput = Vector2.SmoothDamp(currentInput, nextInput, ref inputVelocity, 0.5f);
-            if (motionState == MotionState.NotInCombat)
+            currentInput = Vector2.SmoothDamp(currentInput, nextInput, ref inputVelocity, 0.4f);
+
+            if (motionstates == Motionstates.NotInCombat)
             {
-                //Calcular direccion de movimiento
+                //Calcular direccin de movimientos
                 Transform cameraTransform = Camera.main.transform;
-                Vector3 cameraForward = Vector3.Lerp(cameraTransform.forward, cameraTransform.up,
+                Vector3 cameraFoward = Vector3.Lerp(cameraTransform.forward, cameraTransform.up,
                     Mathf.Abs(Vector3.Dot(cameraTransform.forward, transform.up)));
 
                 Vector3 cameraRight = cameraTransform.right;
-                
-                projectedVector = Vector3.ProjectOnPlane(cameraForward, transform.up).normalized * currentInput.y + cameraRight * currentInput.x;
+                projectedVector = Vector3.ProjectOnPlane(cameraFoward, transform.up).normalized * currentInput.y + cameraRight * currentInput.x;
                 projectedVector = projectedVector.normalized;
 
-                currentRotation = Quaternion.LookRotation(projectedVector,transform.up);
-                
+
+                currentRotation = Quaternion.LookRotation(projectedVector, transform.up);
                 transform.rotation = currentRotation;
 
-                //Setear la animacion
-                animator.SetFloat(motionYId, projectedVector.magnitude);
+                //Setear la animaci�n
+                animator.SetFloat(MotionYId, projectedVector.magnitude);
             }
 
-            //Si no se esta moviendo, limitar la cantidad que se resta el input
+
             if (!moving)
             {
                 nextInput = Vector2.zero;
                 nextInput.Set(Mathf.Clamp(nextInput.x, -0.1f, 0.1f), Mathf.Clamp(nextInput.y, -0.1f, 0.1f));
             }
+
+
         }
 #if UNITY_EDITOR
         private void OnDrawGizmos()
@@ -89,5 +84,4 @@ namespace Session3
             Gizmos.DrawLine(transform.position, transform.position + projectedVector);
         }
 #endif
-    }
 }
