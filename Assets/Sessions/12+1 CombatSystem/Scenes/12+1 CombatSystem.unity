@@ -1138,10 +1138,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 909f825d4b4b27a4883a70309daff744,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 477611820}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 909f825d4b4b27a4883a70309daff744,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 477611818}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 909f825d4b4b27a4883a70309daff744,
         type: 3}
@@ -1151,6 +1147,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 477611825}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 909f825d4b4b27a4883a70309daff744,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 477611826}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 909f825d4b4b27a4883a70309daff744,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 477611827}
     - targetCorrespondingSourceObject: {fileID: 1291881448402361601, guid: 909f825d4b4b27a4883a70309daff744,
         type: 3}
       insertIndex: -1
@@ -1248,9 +1252,8 @@ MonoBehaviour:
     m_ActionName: Main/HeavyAttack[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 477611820}
-        m_TargetAssemblyTypeName: ThirdPersonShooter.ThirdPersonShooterMotionController,
-          ThirdPersonShooterGameController
+      - m_Target: {fileID: 477611826}
+        m_TargetAssemblyTypeName: ThirdPersonCharacterMovement, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1263,11 +1266,15 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c7c6e56d-414a-468f-9bd0-92053afe4e77
     m_ActionName: Main/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 78a1ab90-f4c6-4eed-b45f-e2e7f3a5738c
+    m_ActionName: Main/Aim[/Mouse/delta,/Pen/delta]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Main
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 330585545}
 --- !u!114 &477611815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,18 +1334,6 @@ MonoBehaviour:
   camera: {fileID: 330585548}
   normalMotionCamera: {fileID: 0}
   aimingMotionCamera: {fileID: 0}
---- !u!114 &477611820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477611810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1805134086, guid: 1f38e2f052e48f24b9667748f80a6175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &477611821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,6 +1381,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 477611824}
   maxHealth: 100
+--- !u!114 &477611826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477611810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a38cf04da1bde94b9d5327373585ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &477611827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477611810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fca9aca9c804e043b3fbf3dba830fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotationTarget: {fileID: 0}
+  lookSpeed: 30
+  aimingCamera: {fileID: 0}
+  camera: {fileID: 0}
+  aimTarget: {fileID: 0}
+  verticalThreshold: {x: 0, y: 0}
+  horizontalThreshold: {x: 0, y: 0}
+  aimCameraRig: {fileID: 0}
 --- !u!4 &483318984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8180312395602558014, guid: 909f825d4b4b27a4883a70309daff744,

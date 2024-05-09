@@ -6,6 +6,15 @@
             "id": "6db5280e-1392-46c7-9379-448dba8c5dc4",
             "actions": [
                 {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "c7c6e56d-414a-468f-9bd0-92053afe4e77",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "594a6360-6678-455f-81a1-0dbc1170a968",
@@ -24,9 +33,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Move",
+                    "name": "Aim",
                     "type": "Value",
-                    "id": "c7c6e56d-414a-468f-9bd0-92053afe4e77",
+                    "id": "78a1ab90-f4c6-4eed-b45f-e2e7f3a5738c",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -110,6 +119,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c003ff83-dcaf-408e-b120-7dc092c3474a",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
