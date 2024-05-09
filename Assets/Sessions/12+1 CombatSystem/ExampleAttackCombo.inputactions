@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Attack",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "594a6360-6678-455f-81a1-0dbc1170a968",
                     "expectedControlType": "Button",
                     "processors": "",
