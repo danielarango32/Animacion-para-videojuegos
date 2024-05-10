@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ded465f-3d83-4d8f-bb9a-6bf508343d66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Animacion-para-videojuegos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Animacion-para-videojuegos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Grruzam Powerful Sword Animation(Great Sword, Katana)/Animation/M_Big_Sword/2_Attacks/2__7Combos/M_Big_Sword@Attack_7Combo_7.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grruzam Powerful Sword Animation(Great Sword, Katana)/Animation/M_Big_Sword/2_Attacks/2__7Combos/M_Big_Sword@Attack_7Combo_7.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Animation/CombatAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Animation/CombatAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/ExampleAttackCombo.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/ExampleAttackCombo.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/ExampleScripts/AttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/ExampleScripts/AttackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Scenes/12+1 CombatSystem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Scenes/12+1 CombatSystem.unity" afterDir="false" />
-    </list>
+    <list default="true" id="2ded465f-3d83-4d8f-bb9a-6bf508343d66" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +100,7 @@
       <workItem from="1715226802439" duration="31000" />
       <workItem from="1715226862793" duration="155000" />
       <workItem from="1715227039703" duration="1121000" />
-      <workItem from="1715309014755" duration="2142000" />
+      <workItem from="1715309014755" duration="2532000" />
     </task>
     <servers />
   </component>
