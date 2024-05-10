@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRotationTarget: {fileID: 1043073999}
-  lookSpeed: 100
+  lookSpeed: 5
   aimingCamera: {fileID: 543406942}
   camera: {fileID: 330585545}
   aimTarget: {fileID: 2100277408}
