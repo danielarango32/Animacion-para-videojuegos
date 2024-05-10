@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "HeavyAttack",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "b2ddd0da-9efc-413f-8bcd-72220b63cccb",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -46,6 +46,15 @@
                     "type": "Value",
                     "id": "1105fd88-4763-43da-9008-bdfef2d3365c",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SuperAttack",
+                    "type": "Button",
+                    "id": "8b1e7c01-ba4a-4573-a054-cc260492e835",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -148,6 +157,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Aiming",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b579371d-a40c-493a-9406-0fbe513da67f",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SuperAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

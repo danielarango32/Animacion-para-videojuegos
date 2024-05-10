@@ -967,6 +967,27 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8354703861718019206, guid: 909f825d4b4b27a4883a70309daff744,
+        type: 3}
+    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc98a00e7c6b35848aa4b5eb3ae7001f, type: 2}
+    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8b99aa8bf08b1cf45927873cfef61948, type: 2}
     - target: {fileID: -8679921383154817045, guid: 909f825d4b4b27a4883a70309daff744,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1032,27 +1053,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 907d7214b7e937442b937c9f880a7751, type: 2}
-    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 8354703861718019206, guid: 909f825d4b4b27a4883a70309daff744,
-        type: 3}
-    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: dc98a00e7c6b35848aa4b5eb3ae7001f, type: 2}
-    - target: {fileID: 3853268898807207900, guid: 7fde601b114b7144a8d99585be22a4ed,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8b99aa8bf08b1cf45927873cfef61948, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7882376022164389543, guid: 7fde601b114b7144a8d99585be22a4ed, type: 3}
@@ -1109,11 +1109,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 909f825d4b4b27a4883a70309daff744,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 477611827}
+      addedObject: {fileID: 477611826}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 909f825d4b4b27a4883a70309daff744,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 477611826}
+      addedObject: {fileID: 477611830}
     - targetCorrespondingSourceObject: {fileID: 1291881448402361601, guid: 909f825d4b4b27a4883a70309daff744,
         type: 3}
       insertIndex: -1
@@ -1219,9 +1219,8 @@ MonoBehaviour:
     m_ActionName: Main/HeavyAttack[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 477611827}
-        m_TargetAssemblyTypeName: ThirdPersonShooter.ThirdPersonShooterMotionController,
-          ThirdPersonShooterGameController
+      - m_Target: {fileID: 477611830}
+        m_TargetAssemblyTypeName: ThirdPersonMovementWorking, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1266,6 +1265,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1105fd88-4763-43da-9008-bdfef2d3365c
     m_ActionName: Main/Aiming[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 477611811}
+        m_TargetAssemblyTypeName: AttackController, Assembly-CSharp
+        m_MethodName: OnSuperAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8b1e7c01-ba4a-4573-a054-cc260492e835
+    m_ActionName: Main/SuperAttack[/Keyboard/t]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Main
@@ -1360,25 +1375,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRotationTarget: {fileID: 1043073999}
-  lookSpeed: 5
+  lookSpeed: 100
   aimingCamera: {fileID: 543406942}
   camera: {fileID: 330585545}
   aimTarget: {fileID: 2100277408}
   verticalThreshold: {x: 0, y: 0}
   horizontalThreshold: {x: 0, y: 0}
   aimCameraRig: {fileID: 918729761}
---- !u!114 &477611827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477611810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1805134086, guid: 1f38e2f052e48f24b9667748f80a6175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &477611828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1409,6 +1412,18 @@ MonoBehaviour:
   OnStateChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &477611830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477611810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb0e1cee2806f7438e3d460be970260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &483318984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8180312395602558014, guid: 909f825d4b4b27a4883a70309daff744,

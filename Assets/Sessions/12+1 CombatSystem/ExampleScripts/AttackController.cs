@@ -65,11 +65,18 @@ public class AttackController : MonoBehaviour
         Animator.SetTrigger("Attack");
     }
 
+    public void OnSuperAttack(InputAction.CallbackContext ctx)
+    {
+        if (!canAttackAgain) return;
+        if (PlayerState.CurrentStamina <= 0) return;
+        PlayerState.ModifyStamina(-playerState.CurrentStamina);
+        bool val = ctx.ReadValueAsButton();
+        if (!val) return;
+        Animator.SetTrigger("SuperAttack");
+    }
+
     public void OnHeavyAttack(InputAction.CallbackContext ctx)
     {
-        
-        
-        
         bool val = ctx.ReadValueAsButton();
         if (val)
         {
