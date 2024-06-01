@@ -2,6 +2,15 @@ Game Animation 2024 - UPB
 
 # Animacion-para-videojuegos
 
+
+## Entrega final 
+
+
+
+https://github.com/danielarango32/Animacion-para-videojuegos/assets/71040945/59edd0c7-e6f1-417c-927d-275180247669
+
+
+
 ## Entrega 4 Combate Ofensivo
 
 
