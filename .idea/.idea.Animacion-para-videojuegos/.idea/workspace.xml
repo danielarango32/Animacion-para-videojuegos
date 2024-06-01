@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ded465f-3d83-4d8f-bb9a-6bf508343d66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Animacion-para-videojuegos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Animacion-para-videojuegos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Scenes/12+1 CombatSystem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Scenes/12+1 CombatSystem.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Scripts/CharacterDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sessions/12+1 CombatSystem/Scripts/CharacterDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="2ded465f-3d83-4d8f-bb9a-6bf508343d66" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +103,7 @@
       <workItem from="1715226862793" duration="155000" />
       <workItem from="1715227039703" duration="1121000" />
       <workItem from="1715309014755" duration="2532000" />
-      <workItem from="1716691333558" duration="6372000" />
+      <workItem from="1716691333558" duration="7038000" />
     </task>
     <servers />
   </component>
